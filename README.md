@@ -2,7 +2,17 @@
 
 A boilerplate project with Go, Gin and PostgresDB
 
+## TODO
+- [ ] Proper health endpoints
+- [ ] Postgres DB Connection
+- [ ] Demo controller
+
 ## Dependencies
+- **Go** as the programming language of choice
+- **Gin** as the web framework
+- **Logrus** for logging
+
+## Postgres
 Setup Postgres dependency locally:  
 ```bash
 docker run -d \

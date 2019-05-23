@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	log "github.com/sirupsen/logrus"
 	"net/http"
-
 )
 
 func main() {
@@ -22,5 +22,7 @@ func main() {
 			"message": "OK",
 		})
 	})
+
+	log.Fatal(router.Run())
 
 }
