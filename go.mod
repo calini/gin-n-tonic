@@ -1,4 +1,4 @@
-module go.ilie.io/gin-n-tonic
+module go.ilie.io/templates/plate
 
 go 1.12
 

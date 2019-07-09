@@ -1,28 +1,28 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"net/http"
+	"go.ilie.io/templates/plate/setup"
+)
+
+const (
+	version = "v1"
+	addr    = ":8080"
 )
 
 func main() {
-	router := gin.Default()
-
-	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello world!")
-	})
-
-	router.GET("/health", func(c *gin.Context) {
-		c.String(http.StatusOK, "OK")
-	})
-
-	router.GET("/api/health", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "OK",
+	r := setup.Router()
+	api := r.Group("/api/" + version)
+	{
+		api.GET("/ping", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{
+				"message": "pong",
+			})
 		})
-	})
+	}
 
-	log.Fatal(router.Run())
-
+	log.Fatal(setup.RunDefault(r, addr))
 }

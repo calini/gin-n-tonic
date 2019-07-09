@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+
+  plate:
+    image: docker.ilie.io/templates/plate:latest
+    ports:
+      - "8080:8080"

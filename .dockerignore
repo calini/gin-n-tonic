@@ -1,0 +1,13 @@
+## JetBrains stuff ##
+
+.idea/**/*
+
+
+## Docker stuff ##
+
+Dockerfile
+.dockerignore
+
+
+## Other stuff ##
+README.md
