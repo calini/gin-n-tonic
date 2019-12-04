@@ -1,5 +1,5 @@
 ## Build stage ##
-FROM golang:1.12-alpine AS builder
+FROM golang:1.13-alpine AS builder
 RUN apk --no-cache add git
 
 WORKDIR /out

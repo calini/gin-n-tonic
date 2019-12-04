@@ -1,13 +1,11 @@
 ## JetBrains stuff ##
-
 .idea/**/*
 
-
 ## Docker stuff ##
-
-Dockerfile
 .dockerignore
-
+docker-compose.yml
 
 ## Other stuff ##
-README.md
+**/*.md
+Makefile
+.gitignore

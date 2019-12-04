@@ -15,6 +15,7 @@ const (
 
 func main() {
 	r := setup.Router()
+
 	api := r.Group("/api/" + version)
 	{
 		api.GET("/ping", func(c *gin.Context) {
@@ -24,5 +25,7 @@ func main() {
 		})
 	}
 
-	log.Fatal(setup.RunDefault(r, addr))
+	if err := setup.RunDefault(r, addr); err != nil {
+		log.Fatal(err)
+	}
 }
