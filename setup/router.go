@@ -14,7 +14,7 @@ func Router() *gin.Engine {
 	router.GET("/health", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"status": "OK",
-			"timestamp": time.Now().Format(time.RFC822),
+			"timestamp": time.Now().Format(time.RFC3339Nano),
 		})
 	})
 
