@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: docker.ilie.io/templates/plate
+  repository: docker.io/calini/plate
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""

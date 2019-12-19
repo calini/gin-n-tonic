@@ -3,6 +3,7 @@ version: "3.7"
 services:
 
   plate:
-    image: docker.ilie.io/templates/plate:latest
+    build: .
+    image: docker.pkg.github.com/calini/plate/plate:dev
     ports:
       - "8080:8080"

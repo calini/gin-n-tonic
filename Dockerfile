@@ -8,12 +8,17 @@ WORKDIR /out
 COPY go.mod go.sum /out/
 RUN go mod download
 
-# build project
+# copy project
 COPY . .
+
+# test project
+RUN CGO_ENABLED=0 GOOS=linux go test -v ./...
+
+# build project
 RUN CGO_ENABLED=0 GOOS=linux go build -o app
 
 ## Run stage ##
-FROM alpine:latest
+FROM scratch
 
 COPY --from=builder /out/app .
 EXPOSE 8080
