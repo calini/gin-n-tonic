@@ -1,2 +1,4 @@
 #!/usr/bin/env sh
-helm install plate ./deploy/helm/plate --namespace=development --values=./deploy/scripts/dev/values.yaml
+helm install plate ./deploy/helm/plate \
+  --values ./deploy/helm/values/dev/values.yaml \
+  --namespace dev

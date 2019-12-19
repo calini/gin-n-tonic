@@ -1,2 +1,3 @@
 #!/usr/bin/env sh
-helm delete plate --namespace=development
+helm delete plate \
+  --namespace dev
