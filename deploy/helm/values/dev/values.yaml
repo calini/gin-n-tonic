@@ -3,4 +3,20 @@ maxSurge: 1
 maxUnavailable: 0
 
 image:
+  repository: docker.io/calini/plate
   tag: dev
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: plate.dev.ilie.io
+      paths: [/]
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
